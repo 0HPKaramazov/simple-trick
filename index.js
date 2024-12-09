@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Up and running...');
+    res.status(200).send('Up and running...');
 });
 
 app.use('/crd', cardRoutes);
