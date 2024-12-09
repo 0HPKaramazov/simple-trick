@@ -7,7 +7,6 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 import cardRoutes from './routes/cardRoutes.js'
-import { saveCard } from './controllers/cardControllers.js'
 
 
 const app = express();
@@ -21,9 +20,8 @@ app.get('/', (req, res) => {
     res.status(200).send('Up and running...');
 });
 
-app.post('/crd', saveCard);
 
-//app.use('/crd', cardRoutes);
+app.use('/crd', cardRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 3000;
