@@ -16,6 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('Up and running...');
+});
+
 app.use('/crd', cardRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
